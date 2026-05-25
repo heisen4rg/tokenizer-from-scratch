@@ -3,7 +3,7 @@ import string
 
 
 
-def load_vocab(path="./"):
+def load_vocab(path="./data/"):
     with open(path + "vocab.json", "r", encoding="utf-8") as f:
         vocab = json.load(f)
     
