@@ -51,9 +51,12 @@ if __name__ == "__main__":
     freq = pretokenize(text)
     char_freq = char_split(freq)
     
-    merges, final_char_freq = train(char_freq, vocab_size=50)
+    merges, final_char_freq = train(char_freq, vocab_size=2000)
     
     print(f"\nTotal merges: {len(merges)}")
     print("\nMerge rules in order:")
     for i, pair in enumerate(merges):
-        print(f"  merge {i+1}: {pair[0]} + {pair[1]} → {pair[0]+pair[1]}")
+       print(f"  merge {i+1}: {pair[0]} + {pair[1]} → {pair[0]+pair[1]}")
+    
+    first_10 = dict(list(final_char_freq.items())[:10])
+    print(first_10)

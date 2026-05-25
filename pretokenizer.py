@@ -5,24 +5,24 @@ import string
 
 def pretokenize(text):
     words = text.split()
-    freq = {}
+    word_freq = {}
     for word in words:
         word = word.strip(string.punctuation) 
-        if word not in freq:
-            freq[word] = 1
+        if word not in word_freq:
+            word_freq[word] = 1
         
         else:
-            freq[word] += 1
+            word_freq[word] += 1
 
-    return freq
+    return word_freq
 
 
 
-def char_split(freq):
+def char_split(word_freq):
     char_freq = {}
-    for word in freq:
+    for word in word_freq:
         chars = tuple(word)        
-        char_freq[chars] = freq[word]   
+        char_freq[chars] = word_freq[word]   
     return char_freq
             
 
