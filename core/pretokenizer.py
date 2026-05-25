@@ -1,4 +1,4 @@
-from txt2words import load_file
+from input.txt2words import load_file
 import string
 
 

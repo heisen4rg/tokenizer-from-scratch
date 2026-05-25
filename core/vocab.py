@@ -1,6 +1,6 @@
-from txt2words import load_file
-from pretokenizer import pretokenize, char_split
-from trainer import train
+from input.txt2words import load_file
+from core.pretokenizer import pretokenize, char_split
+from core.trainer import train
 import json
 
 

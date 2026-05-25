@@ -1,5 +1,5 @@
-from pretokenizer import pretokenize, char_split
-from txt2words import load_file
+from core.pretokenizer import pretokenize, char_split
+from input.txt2words import load_file
 
 
 
