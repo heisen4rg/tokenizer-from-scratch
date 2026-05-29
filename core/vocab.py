@@ -1,4 +1,4 @@
-from input.txt2words import load_file
+from input_.txt2words import load_file
 from core.pretokenizer import pretokenize, char_split
 from core.trainer import train
 import json
@@ -33,25 +33,3 @@ def save_vocab(vocab, merges, path="./"):
     
     print(f"saved vocab.json ({len(vocab)} tokens)")
     print(f"saved merges.json ({len(merges)} merges)")
-
-
-
-if __name__ == "__main__":
-    text = load_file("/Users/heisen4rg/Downloads/shakespeare.txt")
-    freq = pretokenize(text)
-    char_freq = char_split(freq)
-    
-    merges, final_char_freq = train(char_freq, vocab_size=2000)
-    
-    vocab = allocate_token_id(final_char_freq)
-    
-    print(f"Vocab size: {len(vocab)}")
-    print("\nFirst 10 tokens:")
-    for token, id in list(vocab.items())[:10]:
-        print(f"  '{token}' → {id}")
-    
-    print("\nLast 10 tokens:")
-    for token, id in list(vocab.items())[-10:]:
-        print(f"  '{token}' → {id}")
-    
-    save_vocab(vocab, merges)

@@ -1,5 +1,5 @@
 from core.pretokenizer import pretokenize, char_split
-from input.txt2words import load_file
+from input_.txt2words import load_file
 
 
 
@@ -43,20 +43,3 @@ def train(char_freq, vocab_size):
         merge.append(highest_freq_pair)
     
     return merge, char_freq
-
-
-
-if __name__ == "__main__":
-    text = load_file("/Users/heisen4rg/Downloads/shakespeare.txt")
-    freq = pretokenize(text)
-    char_freq = char_split(freq)
-    
-    merges, final_char_freq = train(char_freq, vocab_size=2000)
-    
-    print(f"\nTotal merges: {len(merges)}")
-    print("\nMerge rules in order:")
-    for i, pair in enumerate(merges):
-       print(f"  merge {i+1}: {pair[0]} + {pair[1]} → {pair[0]+pair[1]}")
-    
-    first_10 = dict(list(final_char_freq.items())[:10])
-    print(first_10)

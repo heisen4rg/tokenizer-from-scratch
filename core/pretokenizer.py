@@ -1,4 +1,4 @@
-from input.txt2words import load_file
+from input_.txt2words import load_file
 import string
 
 
@@ -24,14 +24,3 @@ def char_split(word_freq):
         chars = tuple(word)        
         char_freq[chars] = word_freq[word]   
     return char_freq
-            
-
-
-if __name__ == "__main__":
-    text = load_file("/Users/heisen4rg/Downloads/shakespeare.txt")
-    freq = pretokenize(text)
-    print(f"Unique words: {len(freq)}")
-    print(sorted(freq.items(), key=lambda x: x[1], reverse=True)[:10])
-    char_freq = char_split(freq)
-    for k, v in list(char_freq.items())[:5]:
-        print(k, "→", v)
