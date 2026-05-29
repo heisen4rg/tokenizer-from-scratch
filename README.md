@@ -57,3 +57,5 @@ Work in progress — Planning to turn it from character level to byte level toke
 
 ## Version History
 v1.0.0 - English only, character level BPE (Current ver)
+
+v1.0.0 is now complete.
