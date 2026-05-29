@@ -2,7 +2,6 @@ from input_.txt2words import load_file
 import string
 
 
-
 def pretokenize(text):
     words = text.split()
     word_freq = {}
